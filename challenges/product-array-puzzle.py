@@ -37,12 +37,15 @@ def withoutdivision(arr):
 
     for i in range(1,l):
         left[i] = arr[i-1] * left[i-1]
+        #left[i] stores product of all elements to the left of a[i] and not including a[i]
 
     for i in range(l-2, -1, -1):
         right[i] = arr[i+1] * right[i+1]
+        #right[i] stores the product of all elements to the right of a[i] and not including a[i]
 
     for i in range(l):
         prod[i] = left[i] * right[i]
+        #prod[i] = all elements to left * all elements to right = prod of all elements except a[i]
 
     return prod
 
